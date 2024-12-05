@@ -23,7 +23,7 @@ public class Repo
 
     public override string ToString()
     {
-        return $"Name: {this.Name} \n Description: {this.Description} \n Url: {this.html_url} \n Homepage: {this.Homepage} \n Watchers: {this.Watchers} \n Pushed: {this.Pushed_at}";
+        return $"Name: {this.Name} \nDescription: {this.Description} \nUrl: {this.html_url} \nHomepage: {this.Homepage} \nWatchers: {this.Watchers} \nPushed: {this.Pushed_at}";
     }
 
 }

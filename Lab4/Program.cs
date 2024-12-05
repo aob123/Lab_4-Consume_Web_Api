@@ -7,6 +7,5 @@ internal class Program
         await repoService.GetRepos();
         var locationService = new LocationService();
         await locationService.GetLocation("us", "nj", "montvale");
-
     }
 }

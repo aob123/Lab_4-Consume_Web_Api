@@ -1,24 +1,12 @@
 ﻿
-using System.Text.Json;
-HttpClient client = new();
-
-try
+internal class Program
 {
-    client.DefaultRequestHeaders.Add("User-Agent", "aob123");
-    var url = new Uri("https://api.github.com/orgs/dotnet/repos");
-    var response = await client.GetStringAsync(url);
-    int counter = 0;
-    var repos = JsonSerializer.Deserialize<List<Repo>>(response);
-
-    foreach (var repo in repos)
+    private static async Task Main(string[] args)
     {
-        counter++;
-        Console.WriteLine($"#{counter} \n {repo}");
+        var repoService = new RepoService();
+        await repoService.GetRepos();
+        var locationService = new LocationService();
+        await locationService.GetLocation("us", "nj", "montvale");
+
     }
-
 }
-catch (Exception e)
-{
-    Console.WriteLine($"Error: {e.Message}");
-}
-
